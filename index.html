@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakana-widget@2.5.0/lib/sakana.min.css" />
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sakana-widget" class="centered">
+
+        </div>
+
+
+    </div>
+    <script>
+        function initSakanaWidget() {
+            const github = SakanaWidget.getCharacter('chisato');
+            github.image = `https://pic3.zhimg.com/80/v2-f81d2a615def2641eebc71293b80ddd2_720w.webp`;
+            console.log(github);
+            SakanaWidget.registerCharacter('github', github);
+            new SakanaWidget({ character: 'github', controls: false }).mount('#sakana-widget');
+        }
+    </script>
+    <script async onload="initSakanaWidget()"
+        src="https://cdn.jsdelivr.net/npm/sakana-widget@2.5.0/lib/sakana.min.js"></script>
+</body>
+
+</html>
